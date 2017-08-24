@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="navbar-brand">
-        <a class="navbar-item" href="http://bulma.io">
+        <a class="navbar-item" href="/">
             {{ config('app.name', 'Laravel Vue Playground') }}
         </a>
         <div class="navbar-burger burger" data-target="navMenubd-example">
