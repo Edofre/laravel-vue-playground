@@ -11,18 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
-<nav class="navbar">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <div class="navbar-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</nav>
+@include('layouts.nav')
 
 <section class="section">
     <div class="container">

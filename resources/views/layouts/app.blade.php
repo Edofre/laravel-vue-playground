@@ -11,39 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
-<nav class="navbar">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-
-        @if (Auth::guest())
-            <a class="navbar-item" href="{{ route('login') }}">Login</a>
-            <a class="navbar-item" href="{{ route('register') }}">Register</a>
-        @else
-            <div class="navbar-item has-dropdown">
-                <a class="navbar-link">
-                    {{ Auth::user()->name }}
-                </a>
-
-                <div class="navbar-dropdown">
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();"
-                       class="navbar-item">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </div>
-            </div>
-        @endif
-        <div class="navbar-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</nav>
+@include('layouts.nav')
 
 <section class="hero is-primary">
     <div class="hero-body">
