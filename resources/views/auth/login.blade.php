@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="column is-half is-offset-one-quarter">
-
         <div class="tile is-parent">
             <article class="tile is-child notification">
                 <p class="title">Login</p>
@@ -24,7 +23,7 @@
                         <div class="control">
                             <input id="password" type="password" class="input {{ $errors->has('password') ? ' is-error' : '' }}" name="password" value="{{ old('password') }}" required autofocus placeholder="Password">
                         </div>
-                        @if ($errors->has('email'))
+                        @if ($errors->has('password'))
                             <p class="help is-danger">{{ $errors->first('password') }}</p>
                         @endif
                     </div>
