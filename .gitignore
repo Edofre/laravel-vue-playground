@@ -4,6 +4,7 @@
 /public/css
 /public/js
 /storage/*.key
+storage/debugbar/
 /vendor
 /.idea
 /.vagrant
@@ -15,3 +16,4 @@ yarn-error.log
 
 
 _ide_helper.php
+.phpstorm.meta.php
