@@ -7,7 +7,8 @@
                 <p class="title">Reset Password</p>
 
                 @if (session('status'))
-                    <div class="alert alert-success">
+                    <div class="notification is-success">
+                        <button class="delete"></button>
                         {{ session('status') }}
                     </div>
                 @endif

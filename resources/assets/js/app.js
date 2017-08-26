@@ -6,6 +6,10 @@
 
 require('./bootstrap');
 
+// Javascript/jQuery helper functions
+require('./functions');
+
+// Vue!
 window.Vue = require('vue');
 
 /**

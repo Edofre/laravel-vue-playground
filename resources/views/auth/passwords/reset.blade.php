@@ -1,76 +1,60 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+    <div class="column is-half is-offset-one-quarter">
+        <div class="tile is-parent">
+            <article class="tile is-child notification">
+                <p class="title">Reset Password</p>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                @if (session('status'))
+                    <div class="notification is-success">
+                        <button class="delete"></button>
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                <form method="POST" action="{{ route('password.request') }}">
+                    {{ csrf_field() }}
+
+                    <input type="hidden" name="token" value="{{ $token }}">
+
+                    <div class="field">
+                        <label for="email" class="label">E-Mail address</label>
+                        <div class="control">
+                            <input id="email" type="email" class="input {{ $errors->has('email') ? ' is-error' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="E-mail address">
                         </div>
-                    @endif
+                        @if ($errors->has('email'))
+                            <p class="help is-danger">This email is invalid</p>
+                        @endif
+                    </div>
 
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    <div class="field">
+                        <label for="password" class="label">Password</label>
+                        <div class="control">
+                            <input id="password" type="password" class="input {{ $errors->has('password') ? ' is-error' : '' }}" name="password" value="{{ old('password') }}" required autofocus placeholder="Password">
                         </div>
+                        @if ($errors->has('password'))
+                            <p class="help is-danger">{{ $errors->first('password') }}</p>
+                        @endif
+                    </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    <div class="field">
+                        <label for="password_confirmation" class="label">Password confirmation</label>
+                        <div class="control">
+                            <input id="password_confirmation" type="password" class="input {{ $errors->has('password_confirmation') ? ' is-error' : '' }}" name="password_confirmation" value="{{ old('password_confirmation') }}" required autofocus placeholder="Password confirmation">
                         </div>
+                        @if ($errors->has('password_confirmation'))
+                            <p class="help is-danger">{{ $errors->first('password_confirmation') }}</p>
+                        @endif
+                    </div>
 
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Reset Password</button>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                </form>
+            </article>
         </div>
     </div>
-</div>
 @endsection
