@@ -12,17 +12,14 @@
 </head>
 <body>
 
-@include('layouts.nav')
+@include('layouts.blocks._nav')
 
 <section class="hero is-primary">
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
-                Primary title
+                @yield('title')
             </h1>
-            <h2 class="subtitle">
-                Primary subtitle
-            </h2>
         </div>
     </div>
 </section>
@@ -35,7 +32,7 @@
     </div>
 </section>
 
-@include('layouts.footer')
+@include('layouts.blocks._footer')
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
