@@ -15,7 +15,7 @@ class CreateNewsItemsTable extends Migration
         Schema::create('news_items', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('news_category_id')->unsigned()->nullable;
+            $table->integer('news_category_id')->unsigned()->nullable();
             $table->foreign('news_category_id')->references('id')->on('news_categories')->onUpdate('cascade')->onDelete('set null');
 
             $table->string('title');
