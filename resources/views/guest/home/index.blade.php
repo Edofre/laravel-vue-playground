@@ -6,6 +6,6 @@
 
 @section('content')
     <h2 class="subtitle">
-        You are logged in!
+        Welcome!
     </h2>
 @endsection

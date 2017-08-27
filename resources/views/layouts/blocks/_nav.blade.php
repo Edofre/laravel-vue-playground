@@ -16,6 +16,9 @@
                 <a class="navbar-item" href="{{ route('login') }}">Login</a>
                 <a class="navbar-item" href="{{ route('register') }}">Register</a>
             @else
+                <a class="navbar-item" href="{{ route('admin.news-category.index') }}">News category</a>
+                <a class="navbar-item" href="{{ route('admin.news-item.index') }}">News item</a>
+                <a class="navbar-item" href="{{ route('admin.news-tag.index') }}">News tag</a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <div class="navbar-link">
                         {{ Auth::user()->name }}
