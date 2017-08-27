@@ -28,5 +28,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class NewsCategory extends Model
 {
     use SoftDeletes;
-    //
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function newsItems()
+    {
+        return $this->hasMany(NewsItem::class);
+    }
 }

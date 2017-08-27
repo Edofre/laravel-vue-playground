@@ -26,4 +26,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class NewsTag extends Model
 {
     use SoftDeletes;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
+     */
+    public function newsItems()
+    {
+        return $this->belongsToMany(NewsItem::class, 'news_item_tags')
+            ->withTimestamps();
+    }
 }

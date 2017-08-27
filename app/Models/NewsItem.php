@@ -30,4 +30,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class NewsItem extends Model
 {
     use SoftDeletes;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function newsCategory()
+    {
+        return $this->belongsTo(NewsCategory::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
+     */
+    public function newsTags()
+    {
+        return $this->belongsToMany(NewsTag::class, 'news_item_tags')
+            ->withTimestamps();
+    }
 }
