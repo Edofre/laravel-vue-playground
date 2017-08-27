@@ -9,6 +9,9 @@ require('./bootstrap');
 // Javascript/jQuery helper functions
 require('./functions');
 
+// Functions to enhance Bulma
+require('./bulma');
+
 // Vue!
 window.Vue = require('vue');
 

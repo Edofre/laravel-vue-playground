@@ -1,2 +1,64 @@
 // Font awesome
 @import "node_modules/font-awesome/scss/font-awesome";
+
+.is-hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .is-hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px), print {
+  .is-hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1007px) {
+  .is-hidden-tablet-only {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1007px) {
+  .is-hidden-touch {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .is-hidden-desktop {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
+  .is-hidden-desktop-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .is-hidden-widescreen {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1391px) {
+  .is-hidden-widescreen-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1392px) {
+  .is-hidden-fullhd {
+    display: none !important;
+  }
+}
+
+.navbar-menu {
+  display: none;
+}
