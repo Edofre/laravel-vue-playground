@@ -12,7 +12,7 @@
 </head>
 <body>
 
-@include('layouts.nav')
+@include('layouts.blocks._nav')
 
 <section class="section">
     <div class="container">
@@ -22,7 +22,7 @@
     </div>
 </section>
 
-@include('layouts.footer')
+@include('layouts.blocks._footer')
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
