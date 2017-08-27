@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\NewsCategory
- *
  * @mixin \Eloquent
  * @property int                 $id
  * @property string              $name
@@ -27,5 +27,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class NewsCategory extends Model
 {
+    use SoftDeletes;
     //
 }
