@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 /**
  * App\Models|NewsItem
@@ -29,7 +31,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class NewsItem extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasSlug;
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
