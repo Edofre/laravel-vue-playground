@@ -24,13 +24,7 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="content">
-            @yield('content')
-        </div>
-    </div>
-</section>
+@yield('content')
 
 @include('layouts.blocks._footer')
 

@@ -10,6 +10,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bulma');
+
 } catch (e) {
 }
 

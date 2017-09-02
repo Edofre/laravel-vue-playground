@@ -5,7 +5,13 @@
 @endsection
 
 @section('content')
-    <h2 class="subtitle">
-        Welcome admin!
-    </h2>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <h2 class="subtitle">
+                    Welcome admin!
+                </h2>
+            </div>
+        </div>
+    </section>
 @endsection
