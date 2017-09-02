@@ -18,7 +18,7 @@ class NewsCategoryController extends Controller
      */
     public function index()
     {
-        $newsCategories = NewsCategory::all();
+        $newsCategories = NewsCategory::query()->orderBy('id', 'desc')->paginate(20);
 
         return view('admin.news-category.index', [
             'newsCategories' => $newsCategories,

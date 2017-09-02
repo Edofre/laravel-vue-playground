@@ -42,6 +42,7 @@ return [
 
     /** Default attributes */
     'id'              => 'ID',
+    'id_description'  => 'Unique identifier',
     'name'            => 'Name',
     'created_at'      => 'Created at',
     'updated_at'      => 'Updated at',
