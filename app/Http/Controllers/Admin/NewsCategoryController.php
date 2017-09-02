@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Store\StoreNewsCategoryRequest;
+use App\Http\Requests\Admin\Update\UpdateNewsCategoryRequest;
+use App\Models\NewsCategory;
 
 /**
  * Class NewsCategoryController
@@ -16,7 +18,11 @@ class NewsCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $newsCategories = NewsCategory::all();
+
+        return view('admin.news-category.index', [
+            'newsCategories' => $newsCategories,
+        ]);
     }
 
     /**
@@ -25,57 +31,80 @@ class NewsCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.news-category.create')->with([
+            'newsCategory' => new NewsCategory(),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
-     * @param  \Illuminate\Http\Request $request
+     * @param StoreNewsCategoryRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNewsCategoryRequest $request)
     {
-        //
+        $newsCategory = NewsCategory::create([
+            'name'        => $request->input('name'),
+            'description' => $request->input('description'),
+            'public'      => $request->input('public', 0),
+        ]);
+
+        //        flash(__('news-category.created', ['name' => $newsCategory->name]))->success()->important();
+        return redirect()->route('admin.news-category.index');
     }
 
     /**
      * Display the specified resource.
-     * @param  int $id
+     * @param NewsCategory $newsCategory
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(NewsCategory $newsCategory)
     {
-        //
+        return view('admin.news-category.show')->with([
+            'newsCategory' => $newsCategory,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
-     * @param  int $id
+     * @param NewsCategory $newsCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(NewsCategory $newsCategory)
     {
-        //
+        return view('admin.news-category.edit')->with([
+            'newsCategory' => $newsCategory,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param UpdateNewsCategoryRequest|\Illuminate\Http\Request $request
+     * @param NewsCategory                                       $newsCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateNewsCategoryRequest $request, NewsCategory $newsCategory)
     {
-        //
+        $newsCategory->update([
+            'name'        => $request->input('name'),
+            'description' => $request->input('description'),
+            'public'      => $request->input('public', 0),
+        ]);
+
+        //        flash(__('news-category.updated', ['name' => $newsCategory->name]))->success()->important();
+        return redirect()->route('admin.news-category.index');
     }
 
     /**
      * Remove the specified resource from storage.
-     * @param  int $id
+     * @param NewsCategory $newsCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(NewsCategory $newsCategory)
     {
-        //
+        $newsCategory->delete();
+
+        //        flash(__('news-category.deleted', ['name' => $newsCategory->name]))->success()->important();
+        return redirect()->route('admin.news-category.index');
     }
 }
