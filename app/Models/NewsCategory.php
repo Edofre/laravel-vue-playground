@@ -31,6 +31,12 @@ class NewsCategory extends Model
 {
     use SoftDeletes, HasSlug;
 
+    /** @var array */
+    public $dates = [
+        'created_at',
+        'updated_at',
+    ];
+    
     /**
      * Get the options for generating the slug.
      */
