@@ -15,7 +15,7 @@ class StoreNewsCategoryRequest extends StoreRequest
     public function rules()
     {
         $rules = [
-            'name'        => 'required|max:255',
+            'name'        => 'required|min:3|max:255',
             'description' => 'required',
             'public'      => 'boolean',
         ];

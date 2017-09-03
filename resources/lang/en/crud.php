@@ -39,6 +39,7 @@ return [
     'edit'            => 'Edit',
     'update'          => 'Update',
     'delete'          => 'Delete',
+    'reset'           => 'Reset',
 
     /** Default attributes */
     'id'              => 'ID',
