@@ -10,8 +10,6 @@
             <div class="content">
                 {!! Form::open(['route' => 'admin.news-category.store']) !!}
                 @include('admin.news-category._fields')
-
-
                 <div class="field has-addons">
                     <p class="control">
                         <button type="submit" class="button is-primary">
@@ -38,8 +36,6 @@
                         </a>
                     </p>
                 </div>
-
-
                 {!! Form::close() !!}
             </div>
         </div>

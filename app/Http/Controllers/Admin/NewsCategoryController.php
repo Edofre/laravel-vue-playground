@@ -91,6 +91,7 @@ class NewsCategoryController extends Controller
             'public'      => $request->input('public', 0),
         ]);
 
+
         //        flash(__('news-category.updated', ['name' => $newsCategory->name]))->success()->important();
         return redirect()->route('admin.news-category.index');
     }

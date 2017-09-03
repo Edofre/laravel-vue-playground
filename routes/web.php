@@ -16,7 +16,6 @@ Route::get('/', 'Guest\HomeController@index')->name('home');
 // Auth routes
 Auth::routes();
 
-
 /*
 |--------------------------------------------------------------------------
 | Admin routes
