@@ -6,6 +6,7 @@
 /storage/*.key
 storage/debugbar/
 /vendor
+!resources/views/vendor/
 /.idea
 /.vagrant
 Homestead.json
