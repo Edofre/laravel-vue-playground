@@ -28,7 +28,7 @@
                             <tr>
                                 <td>{{ $newsCategory->id }}</td>
                                 <td>{{ $newsCategory->name }}</td>
-                                <td>{{ $newsCategory->public }}</td>
+                                <td>@boolean($newsCategory->public)</td>
                                 <td>
                                     <div class="field has-addons">
                                         <p class="control">
