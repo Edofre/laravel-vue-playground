@@ -12,13 +12,16 @@
                     <dt><strong>{{ __('crud.id') }}</strong></dt>
                     <dd>{{ $newsItem->id }}</dd>
 
-                    <dt><strong>{{ __('news-category.title') }}</strong></dt>
+                    <dt><strong>{{ __('news-item.news_category_id') }}</strong></dt>
+                    <dd>{{ !is_null($newsItem->newsCategory) ? $newsItem->newsCategory->name : __('news-item.no_news_category_set') }}</dd>
+
+                    <dt><strong>{{ __('news-item.title') }}</strong></dt>
                     <dd>{{ $newsItem->title }}</dd>
 
-                    <dt><strong>{{ __('news-category.public') }}</strong></dt>
+                    <dt><strong>{{ __('news-item.public') }}</strong></dt>
                     <dd>{{ $newsItem->public}}</dd>
 
-                    <dt><strong>{{ __('news-category.message') }}</strong></dt>
+                    <dt><strong>{{ __('news-item.message') }}</strong></dt>
                     <dd>{{ $newsItem->message }}</dd>
 
                     <dt><strong>{{ __('crud.created_at') }}</strong></dt>

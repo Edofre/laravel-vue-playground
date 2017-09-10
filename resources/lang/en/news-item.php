@@ -12,4 +12,6 @@ return [
     'message_placeholder'          => 'Give the item a message',
     'public'                       => 'Public',
     'public_placeholder'           => 'Is the news item available to the public',
+
+    'no_news_category_set' => 'No news category set',
 ];
