@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('crud.edit_name', ['name' => lcfirst($newsCategory->name)]) }}
+    {{ __('crud.edit_name', ['name' => lcfirst($newsItem->name)]) }}
 @endsection
 
 @section('content')
     <section class="section">
         <div class="container">
             <div class="content">
-                {!! Form::model($newsCategory, ['route' => ['admin.news-category.update', $newsCategory->id], 'method' => 'patch']) !!}
-                @include('admin.news-category._fields')
+                {!! Form::model($newsItem, ['route' => ['admin.news-item.update', $newsItem->id], 'method' => 'patch']) !!}
+                @include('admin.news-item._fields')
                 <div class="field has-addons">
                     <p class="control">
                         <button type="submit" class="button is-primary">
@@ -28,7 +28,7 @@
                         </button>
                     </p>
                     <p class="control">
-                        <a class="button is-danger" href="{!! route('admin.news-category.show', [$newsCategory]) !!}">
+                        <a class="button is-danger" href="{!! route('admin.news-item.show', [$newsItem]) !!}">
                             <span class="icon is-small">
                                 <i class="fa fa-times"></i>
                             </span>
@@ -40,6 +40,6 @@
             </div>
         </div>
     </section>
-    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-category.news_categories'))]) }}</h1>--}}
-    {{--<a class="btn btn-primary" href="{!! route('admin.news-category.create') !!}">{{ trans('crud.create') }}</a>--}}
+    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-item.news_items'))]) }}</h1>--}}
+    {{--<a class="btn btn-primary" href="{!! route('admin.news-item.create') !!}">{{ trans('crud.create') }}</a>--}}
 @endsection
