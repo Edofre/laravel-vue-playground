@@ -7,6 +7,25 @@
 @section('content')
     <section class="section">
         <div class="container">
+            <nav class="level">
+                <div class="level-left">
+                </div>
+                <div class="level-right">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a href="{!! route('admin.news-item.show', [$newsItem->id]) !!}" title="{{ trans('crud.show') }}" class='button is-primary'>
+                                {{ __('crud.show') }}&nbsp;&nbsp;<span class="icon icon-black"><i class="fa fa-eye"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            {!! Form::open(['route' => ['admin.news-item.destroy', $newsItem->id], 'method' => 'delete']) !!}
+                            {!! Form::button(__('crud.delete'). '&nbsp;&nbsp;<span class="icon icon-black"><i class="fa fa-trash"></i></span>', ['type' => 'submit', 'title'=> trans('crud.delete'),'class' => 'button is-danger', 'onclick' => "return confirm('".trans('crud.are_you_sure')."')"]) !!}
+                            {!! Form::close() !!}
+                        </p>
+                    </div>
+                </div>
+            </nav>
+
             <div class="content">
                 {!! Form::model($newsItem, ['route' => ['admin.news-item.update', $newsItem->id], 'method' => 'patch']) !!}
                 @include('admin.news-item._fields')

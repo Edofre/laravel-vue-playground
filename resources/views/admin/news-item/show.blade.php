@@ -7,7 +7,6 @@
 @section('content')
     <section class="section">
         <div class="container">
-            <!-- Main container -->
             <nav class="level">
                 <div class="level-left">
                 </div>
