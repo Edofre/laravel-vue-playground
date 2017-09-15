@@ -7,6 +7,20 @@
 @section('content')
     <section class="section">
         <div class="container">
+            <nav class="level">
+                <div class="level-left">
+                </div>
+                <div class="level-right">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a href="{!! route('admin.news-item.create') !!}" title="{{ __('crud.create') }}" class='button is-primary'>
+                                {{ __('crud.create') }}&nbsp;&nbsp;<span class="icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+
             <div class="content">
                 <table class="table is-striped is-narrow">
                     <thead>

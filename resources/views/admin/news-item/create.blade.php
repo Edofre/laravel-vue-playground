@@ -7,6 +7,20 @@
 @section('content')
     <section class="section">
         <div class="container">
+            <nav class="level">
+                <div class="level-left">
+                </div>
+                <div class="level-right">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a href="{!! route('admin.news-item.index') !!}" title="{{ __('crud.view_all', ['model' => lcfirst(__('news-item.news_items'))]) }}" class='button is-primary'>
+                                {{ __('crud.view_all', ['model' => lcfirst(__('news-item.news_items'))]) }}&nbsp;&nbsp;<span class="icon"><i class="fa fa-list"></i></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+
             <div class="content">
                 {!! Form::open(['route' => 'admin.news-item.store']) !!}
                 @include('admin.news-item._fields')
