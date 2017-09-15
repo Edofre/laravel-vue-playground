@@ -13,6 +13,11 @@
                 <div class="level-right">
                     <div class="field has-addons">
                         <p class="control">
+                            <a href="{!! route('admin.news-item.index') !!}" title="{{ __('crud.view_all', ['model' => lcfirst(__('news-item.news_items'))]) }}" class='button is-primary'>
+                                {{ __('crud.view_all', ['model' => lcfirst(__('news-item.news_items'))]) }}&nbsp;&nbsp;<span class="icon"><i class="fa fa-list"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
                             <a href="{!! route('admin.news-item.edit', [$newsItem->id]) !!}" title="{{ trans('crud.edit') }}" class="button is-warning">
                                 {{ __('crud.edit') }}&nbsp;&nbsp;<span class="icon"><i class="fa fa-pencil"></i></span>
                             </a>
