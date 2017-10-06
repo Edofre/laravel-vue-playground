@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('crud.view_all', ['model' => lcfirst(__('news-tag.news_categories'))]) }}
+    {{ __('crud.view_all', ['model' => lcfirst(__('news-tag.news_tags'))]) }}
 @endsection
 
 @section('content')
@@ -53,7 +53,7 @@
                     @else
                         <tr>
                             <td>
-                                {{ trans('crud.no_models_found', ['model'=> lcfirst(trans('news-tag.news_categories'))]) }}
+                                {{ trans('crud.no_models_found', ['model'=> lcfirst(trans('news-tag.news_tags'))]) }}
                             </td>
                         </tr>
                     @endif
@@ -63,6 +63,6 @@
             {{ $newsTags->appends(!empty($search) ? ['search' => $search] : null)->links() }}
         </div>
     </section>
-    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-tag.news_categories'))]) }}</h1>--}}
+    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-tag.news_tags'))]) }}</h1>--}}
     {{--<a class="btn btn-primary" href="{!! route('admin.news-tag.create') !!}">{{ trans('crud.create') }}</a>--}}
 @endsection

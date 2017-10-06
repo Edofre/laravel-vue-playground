@@ -19,7 +19,7 @@
                         </p>
                     </div>
                 </div>
-            </nav>
+            </nav>{{----}}
 
             <div class="content">
                 {!! Form::open(['route' => 'admin.news-item.store']) !!}

@@ -30,6 +30,6 @@
             </div>
         </div>
     </section>
-    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-tag.news_categories'))]) }}</h1>--}}
+    {{--<h1 class="panel-title pull-left">{{ trans('crud.view_all', ['model'=> strtolower(trans('news-tag.news_tags'))]) }}</h1>--}}
     {{--<a class="btn btn-primary" href="{!! route('admin.news-tag.create') !!}">{{ trans('crud.create') }}</a>--}}
 @endsection
