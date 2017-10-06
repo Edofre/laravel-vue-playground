@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/news-tags', 'Api\NewsTagController@index')->name('news-tags.index');
+Route::post('/news-tags', 'Api\NewsTagController@store')->name('news-tags.store');
+Route::delete('news-tags/{newsTag}', 'Api\NewsTagController@destroy')->name('news-tags.delete');

@@ -27,6 +27,9 @@ class NewsTag extends Model
 {
     use SoftDeletes;
 
+    /** @var array */
+    protected $guarded = [];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
      */
