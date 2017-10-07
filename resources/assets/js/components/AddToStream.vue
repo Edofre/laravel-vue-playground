@@ -62,23 +62,9 @@
             onSubmit() {
 //                this.form[this.method](this.action)
                 this.form['post']('/api/news-tags/')
-                //                    .then(response => this.displaySuccessMessage('Your news tag was created'))
                     .then(newsTag => this.$emit('completed', newsTag))
-                    .catch(response => this.displayErrorMessage('Your news tag was not created'));
-            },
-            displaySuccessMessage(message) {
-                this.messageClass = 'alert--success';
-                this.message = message;
-            },
-
-            displayErrorMessage(message) {
-                this.messageClass = 'alert--error';
-                this.message = message;
-            },
-
-            clearMessage() {
-                this.message = '';
-            },
+                    .catch(response => console.log('ERROR'));
+            }
         }
 
     }
