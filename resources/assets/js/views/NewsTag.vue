@@ -11,6 +11,11 @@
                     <div class="message-body" v-text="newsTag.description"></div>
                 </div>
 
+                <div v-if="message" class="notification is-success">
+                    <button class="delete"></button>
+                    {{ message }}
+                </div>
+
                 <!-- Add to stream form -->
                 <add-to-stream @completed="addNewsTag"></add-to-stream>
             </div>
@@ -27,7 +32,8 @@
         components: {AddToStream},
         data() {
             return {
-                newsTags: []
+                newsTags: [],
+                message: ''
             }
         },
         created() {
@@ -46,6 +52,7 @@
             addNewsTag(newsTag) {
                 this.newsTags.unshift(newsTag);
 
+                this.message = 'wat is deze';
                 alert('Your news tag has been added to the stream');
 //                window.scrollTo(0, 0);
             },
